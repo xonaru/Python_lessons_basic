@@ -25,10 +25,13 @@ __author__ = 'Федькин Илья Геннадьевич'
 # Для вычисления квадратного корня воспользуйтесь функцией sqrt() модуля math:
 # import math
 # math.sqrt(4) - вычисляет корень числа 4
+
 import math
+
 # Задача-1
-max = 0
+
 a = input('Введите целое число: ')
+max = 0
 for i in a:
     if (int(i)) > max:
        max = int(i)
@@ -49,7 +52,7 @@ Dis = b**2 - 4*a*c
 if Dis > 0:
     x1 = (-b + math.sqrt(Dis)) / a*2
     x2 = (-b - math.sqrt(Dis)) / a*2
-    print('Корни уравнения:\n', 'x1 = {0} ,\n x2 = {1} ',.format(x1, x2))
+    print('Корни уравнения:\n', 'x1 = ', x1, '\n x2 = ', x2)
 elif Dis == 0:
     x1 = (-b + math.sqrt(Dis)) / a*2
     print('Корень уравнения один: ', x1)
