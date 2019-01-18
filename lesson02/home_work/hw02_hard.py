@@ -54,3 +54,67 @@ date = '-2.10.3001'
 #
 # Вход: 11
 # Выход: 5 3
+
+
+#3
+import math
+
+max_flat = 2*10**9
+N_Y = True
+
+start_floor_of_cell = 1
+sum_flats = 0
+cell = 1
+data = []
+position = 0
+remaind = 0
+floor = 0
+max_flat_in_cell = 0
+number = 0
+count=2
+
+while sum_flats <= max_flat:
+    
+     sum_flats = sum_flats + cell**2
+     start_floor_of_cell = start_floor_of_cell + cell - 1
+     data[len(data):]=[cell,start_floor_of_cell,sum_flats]
+     cell= cell+1
+
+print(data)
+     
+while N_Y:
+    number = int(input('Введите номер квартиры от 1 до 2*10^9 : '))
+
+ 
+    while ((number <= 1)|(number >= 2*10**9)):
+        print('Ошибка')
+        number = int(input('Введите номер квартиры от 1 до 2*10^9 : '))
+
+    while number > max_flat_in_cell:
+          max_flat_in_cell = data[count]
+          count = count + 3
+
+    cell_of_number = data[count-5]
+    start_floor_of_number = data[count-4]
+
+    floor = start_floor_of_number + (cell_of_number - 1 - ((max_flat_in_cell - number) // cell_of_number))
+    remaind = ((max_flat_in_cell - number) % cell_of_number)
+
+    if remaind > 0:
+        position = cell_of_number - remaind
+
+    else:
+        position = cell_of_number
+
+    print('На {} этаже {} по счету '.format(floor,position))
+    while True:
+        answer = input('Повторим N \ Y ? : ')
+        if (answer == 'N')|(answer == 'n'): 
+            N_Y = False
+            break
+        elif (answer == 'y')|(answer == 'Y'):
+            N_Y = True
+            break
+        else:
+            print('Ошибка')
+  
