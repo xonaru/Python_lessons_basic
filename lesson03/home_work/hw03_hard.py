@@ -35,6 +35,7 @@
 # print(list(map(chr, range(ord('А'), ord('Я')+1))))
 
 #1
+
 from fractions import Fraction
 
 #arr = '-2 3/4 - 2 5/42'
@@ -44,44 +45,44 @@ arr = '-2 -1/2 - -5 -2/6'
 def find():
 
     count = 0
-    
+
     for i in arr:
-        
+
         if i == '+':
-            
+
             summ = True
             arr.pop(count)
             return(count,summ)
-        
+
         elif i == '-':
-            
+
             summ = False
             arr.pop(count)
             return (count,summ)
-        
+
         count += 1
 
 
 
 def sum(summ,x,y):
-    
+
     if summ:
-        
+
         if y ==2:
-            
+
           a = Fraction(arr[0])
           b = Fraction(arr[1])
-            
+
         if y == 3:
-            
+
           a = Fraction(arr[0])
           b = Fraction(arr[1])
           c = Fraction(arr[2])
           b = b + c
           return a + b
-        
+
         if y == 4:
-            
+
           a = Fraction(arr[0])
           b = Fraction(arr[1])
           c = Fraction(arr[2])
@@ -89,33 +90,33 @@ def sum(summ,x,y):
           a = a + b
           b = c + d
           return a + b
-        
+
     if summ == False:
-        
+
       if y ==2:
-          
+
         a = Fraction(arr[0])
         b = Fraction(arr[1])
         return a + b
-      
+
       if y == 3 & x == 1:
-          
+
         a = Fraction(arr[0])
         b = Fraction(arr[1])
         c = Fraction(arr[2])
         b = -b + c
         return a + b
-      
-      if y == 3 & x == 2
-          
+
+      if y == 3 & x == 2:
+
         a = Fraction(arr[0])
         b = Fraction(arr[1])
         c = Fraction(arr[2])
         b = b - c
         return a + b
-      
+
       if y == 4:
-          
+
         a = Fraction(arr[0])
         b = Fraction(arr[1])
         c = Fraction(arr[2])
@@ -125,19 +126,18 @@ def sum(summ,x,y):
         return a + b
 
 def q(str):
-    
+
     str = str.split('/')
     a = int(str[0])
-    b = int(str[1]
-    
-    if a > b
-        
-     unit =  a // b
-     part =  a % b
-     print ('{} {}/{}'.format(unit,part,b)
-            
+    b = int(str[1])
+
+    if a > b:
+        unit =  a // b
+        part =  a % b
+        print ('{} {}/{}'.format(unit,part,b))
+
     else:
-    
+
         print('{}/{}'.format(a, b))
 
 
@@ -148,16 +148,13 @@ x , summ = find()
 result = (str(sum(summ,x,len(arr))))
 
 if result == '0':
-    
+
     print('0')
-    
+
 else:
-    
+
     q(result)
-
-
-
-
+    
 #2
 import os
 
@@ -258,7 +255,7 @@ Alhabet = (list(map(chr, range(ord('А'), ord('Я')+1))))
 def write_fruit(fruit,letter):
 
     FILE = 'fruit_' + letter
-    DIR = 'fruits'
+    DIR = 'data'
     type = 'a'
 
     with open(os.path.join( DIR, FILE), type, encoding='UTF-8') as f:
