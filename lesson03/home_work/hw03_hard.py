@@ -179,7 +179,6 @@ def read(f):
         return False
 
     readed = readed[0].split()
-    print(readed)
     find(readed)
 
     return True
@@ -188,7 +187,7 @@ def find(file):
 
     FILE_2 = 'hours_of'
     f = open(os.path.join(DIR, FILE_2), 'r', encoding='UTF-8')
-    print(f.read(1))
+    (f.read(1))
 
     while compare(file,f):
 
@@ -220,15 +219,12 @@ def new_file(z,file):
 
             f.write(' ' + (new_add(z,file)))
             f.write('\n')
-            
+
 def new_add(z,file):
-    
-    print(file[4],z[2])
-    
+
     if ((int(file[4]) >= int(z[2]))):
-        
+
         tt = (int(z[2]) / int(file[4])) * int(file[2])
-        print(tt)
         tt = round(tt, 2)
         return str(tt)
 
