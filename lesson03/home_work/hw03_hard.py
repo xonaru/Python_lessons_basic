@@ -220,18 +220,21 @@ def new_file(z,file):
 
             f.write(' ' + (new_add(z,file)))
             f.write('\n')
-
+            
 def new_add(z,file):
-
-    if file[4] >= z[2]:
-
-        tt = (int(file[4]) / int(z[2])) * int(file[2])
+    
+    print(file[4],z[2])
+    
+    if ((int(file[4]) >= int(z[2]))):
+        
+        tt = (int(z[2]) / int(file[4])) * int(file[2])
+        print(tt)
         tt = round(tt, 2)
         return str(tt)
-    
+
     else:
 
-        tt = (int(z[2]) - int(file[4]))/int(file[4])*int(file[2])+int(file[2])
+        tt = (int(z[2]) - int(file[4]))/int(file[4])*(int(file[2])*2)+int(file[2])
         tt = round(tt, 2)
         return str(tt)
 
