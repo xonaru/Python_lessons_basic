@@ -187,7 +187,6 @@ def find(file):
 
     FILE_2 = 'hours_of'
     f = open(os.path.join(DIR, FILE_2), 'r', encoding='UTF-8')
-    (f.read(1))
 
     while compare(file,f):
 
@@ -207,7 +206,7 @@ def compare(file,f):
 
 def new_file(z,file):
 
-    with open(os.path.join( DIR, 'new'), 'a', encoding='UTF-8') as f:
+    with open(os.path.join( DIR, 'new'), 'a', encoding='utf-8-sig') as f:
         f.write(' '.join(file))
         f.write(' ' + z[2])
 
