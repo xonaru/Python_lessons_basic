@@ -75,7 +75,6 @@ def max_summ(number):
 
     return count, position
 
-
 count, position = max_summ(list(map(lambda x: int(x), list(number))))
 print('Индекс смещения первого числа = {} , Произведение 5-ти чисел = {}'.format(count, position))
 
