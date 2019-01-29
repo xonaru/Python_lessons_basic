@@ -31,7 +31,6 @@ def print_help():
     print("ping - тестовый ключ")
 
 def make_dir():
-    def make_dir():
         if not dir_name:
             print("Необходимо указать имя директории вторым параметром")
             return
