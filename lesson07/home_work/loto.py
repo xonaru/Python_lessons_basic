@@ -111,13 +111,13 @@ class Control(NewCard):
     def print(self):
         print('Новый бочонок: {} (осталось {})'.format(self.b0, len(self.bo4)))
         print('------ Ваша карточка -----')
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a1[0], self.a1[1], self.a1[2], self.a1[3], self.a1[4], self.a1[5], self.a1[6], self.a1[7], self.a1[8]))
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a1[9], self.a1[10], self.a1[11], self.a1[12], self.a1[13], self.a1[14],self.a1[15], self.a1[16], self.a1[17]))
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a1[18], self.a1[19], self.a1[20], self.a1[21], self.a1[22], self.a1[23],self.a1[24], self.a1[25], self.a1[26]))
+        print(*self.a1[0:9])
+        print(*self.a1[9:18])
+        print(*self.a1[18:27])
         print('--------------------------\n-- Карточка компьютера ---')
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a2[0], self.a2[1], self.a2[2], self.a2[3], self.a2[4], self.a2[5], self.a2[6], self.a2[7], self.a2[8]))
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a2[9], self.a2[10], self.a2[11], self.a2[12], self.a2[13], self.a2[14], self.a2[14], self.a2[16], self.a2[17]))
-        print('{} {} {} {} {} {} {} {} {}'.format(self.a2[18], self.a2[19], self.a2[20], self.a2[21], self.a2[22], self.a2[23], self.a2[24], self.a2[25], self.a2[26]))
+        print(*self.a2[0:9])
+        print(*self.a2[9:18])
+        print(*self.a2[18:27])
         print('--------------------------')
 
     def update(self, bool):
@@ -154,7 +154,6 @@ class Control(NewCard):
 a = Control()
 count = 0
 while a.win:
-    print(a.i, a.j,"\n", a.a1_i, a.a2_j)
     answer = input('Зачеркнуть цифру? (Y/N)')
 
     if count == 1:
