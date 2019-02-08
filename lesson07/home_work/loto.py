@@ -81,7 +81,7 @@ class NewCard(Bo4enki):
         self.cardd = []
 
     def line(self):
-        g = [self.give, self.give, self.give, self.give, self.give]
+        g = list(map(lambda x: self.give, range(5)))
         g.sort()
         for i in range(4):
             g.insert(random.randint(0,9),' ')
@@ -156,7 +156,7 @@ count = 0
 while a.win:
     answer = input('Зачеркнуть цифру? (Y/N)')
 
-    if count == 1:
+    if count > 1:
         print("Неверная команда, игра окончена")
         break
 
