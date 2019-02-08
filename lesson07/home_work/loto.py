@@ -145,11 +145,11 @@ class Control(NewCard):
             self.b0 = self.give
             self.i = self.a1.count(self.b0)
             self.j = self.a2.count(self.b0)
-            return
+            return True
         self.b0 = self.give
         self.i = self.a1.count(self.b0)
         self.j = self.a2.count(self.b0)
-
+        return True
 
 a = Control()
 count = 0
